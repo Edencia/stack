@@ -265,6 +265,10 @@ output "iam_role" {
   value = "${module.iam_role.arn}"
 }
 
+output "iam_role_default_ecs_role_id" {
+  value = "${module.iam_role.default_ecs_role_id}"
+}
+
 // S3 bucket ID for ELB logs.
 output "log_bucket_id" {
   value = "${module.s3_logs.id}"
