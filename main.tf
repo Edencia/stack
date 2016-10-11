@@ -213,7 +213,7 @@ module "ecs_cluster" {
   docker_volume_size     = "${var.ecs_docker_volume_size}"
   docker_auth_type       = "${var.ecs_docker_auth_type}"
   docker_auth_data       = "${var.ecs_docker_auth_data}"
-  security_groups        = "${join(",", ["format("%s,%s,%s", module.security_groups.internal_ssh, module.security_groups.internal_elb, module.security_groups.external_elb), "${var.ecs_security_groups}"])}"
+  security_groups        = "${join(",", ["format("%s,%s,%s", module.security_groups.internal_ssh, module.security_groups.internal_elb, module.security_groups.external_elb), "var.ecs_security_groups"])}"
   extra_cloud_config_type     = "${var.extra_cloud_config_type}"
   extra_cloud_config_content  = "${var.extra_cloud_config_content}"
 }
